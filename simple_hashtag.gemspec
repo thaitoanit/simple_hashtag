@@ -6,11 +6,11 @@ require 'simple_hashtag/version'
 Gem::Specification.new do |spec|
   spec.name          = "simple_hashtag"
   spec.version       = SimpleHashtag::VERSION
-  spec.authors       = ["Raphael Campardou"]
-  spec.email         = ["ralovely@gmail.com"]
+  spec.authors       = ["Thai Toan"]
+  spec.email         = ["itthaitoan@gmail.com"]
   spec.description   = %q{Parse, store retreive and format hashtags in your text.}
   spec.summary       = %q{Simple Hashtag is a mix between–well–hashtags as we know them and categories. It will scan your Active Record attribute for a tag and store it in an index.}
-  spec.homepage      = "https://github.com/ralovely/simple_hashtag"
+  spec.homepage      = "https://github.com/thaitoanit/simple_hashtag"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
