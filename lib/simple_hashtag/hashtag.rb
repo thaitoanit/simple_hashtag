@@ -14,8 +14,8 @@ module SimpleHashtag
     def self.find_by_name(name)
       Hashtag.where("lower(name) =?", name.downcase).first
     end
-    def self.find_or_create_by_name(name, &block)
-      find_by_name(name) || create(name: name, &block)
+    def self.find_or_create_by_name(name, country, &block)
+      find_by_name(name) || create(name: name, country_id: country, &block)
     end
 
 

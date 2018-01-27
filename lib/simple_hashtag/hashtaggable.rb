@@ -22,7 +22,7 @@ module SimpleHashtag
         parsed_hashtags = []
         array_of_hashtags_as_string = scan_for_hashtags(hashtaggable_content)
         array_of_hashtags_as_string.each do |s|
-          parsed_hashtags << Hashtag.find_or_create_by_name(s[1])
+          parsed_hashtags << Hashtag.find_or_create_by_name(s[1], self.send(self.class.hashtaggable_attribute_country))
         end
         parsed_hashtags
       end
@@ -36,9 +36,11 @@ module SimpleHashtag
 
     module ClassMethods
       attr_accessor :hashtaggable_attribute_name
+      attr_accessor :hashtaggable_attribute_country
 
-      def hashtaggable_attribute(name=nil)
+      def hashtaggable_attribute(name=nil, country=nil)
         self.hashtaggable_attribute_name ||= name || :body
+        self.hashtaggable_attribute_country ||= name || '1'
       end
     end
   end
